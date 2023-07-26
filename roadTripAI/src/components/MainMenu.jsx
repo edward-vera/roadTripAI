@@ -20,7 +20,14 @@ export default function MainMenu({onSubmit}) {
     return `${day}-${month}-${year}`; // Format the date as "dd-mm-yyyy"
   }
 
-  const handleSubmit = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const inputOne = e.target.elements.input1.value;
+    const inputTwo = e.target.elements.input2.value;
+
+    console.log('Input 1 value:', inputOne)
+    console.log('Input 1 value:', inputTwo)
   
     //onSubmit is a prop from parent (app.jsx) that collects user details to be able to use in GetItinerary
     onSubmit({startLocation, endLocation, startDate, endDate})
@@ -30,9 +37,10 @@ export default function MainMenu({onSubmit}) {
   return (
     <div className="mainMenu">        
         <div className="locationContainer">
-        <section>
+        <section onSubmit={onSubmit}>
           <h2>Start Location:</h2>
           <PlacesAutoComplete
+            name="input1"
             location={startLocation}
             setLocation={setStartLocation}
           />
@@ -41,6 +49,7 @@ export default function MainMenu({onSubmit}) {
         <section>
           <h2>End Location:</h2>
           <PlacesAutoComplete
+            name="input1"
             location={endLocation}
             setLocation={setEndLocation}
           />
@@ -64,6 +73,7 @@ export default function MainMenu({onSubmit}) {
             value={endDate}/>
           </section>
         </div>
+        
           <button className="submitButton" onClick={handleSubmit}>Submit</button>        
           {/* <Itinerary /> */}
 

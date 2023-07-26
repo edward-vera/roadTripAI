@@ -45,6 +45,7 @@ const PlacesAutocomplete = ({ google, ...props}) => {
         value={searchTerm}
         onChange={handleInputChange}
       />
+      
       <ul className="prediction-list">
         {predictions.map((prediction) => (
           <li
