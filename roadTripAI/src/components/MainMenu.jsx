@@ -42,6 +42,7 @@ export default function MainMenu({onSubmit, submit, setSubmit, itinerary, setIti
   }
 
   const handleSubmit = () => {
+    console.log(handleSubmit, "handled")
     setSubmit(true)
     //reset itinerary to blank when new one is being fetched
     setItinerary([]);
@@ -143,7 +144,7 @@ export default function MainMenu({onSubmit, submit, setSubmit, itinerary, setIti
         <section onSubmit={onSubmit}>
           <h2>Start Location:</h2>
           <PlacesAutoComplete
-            name="input1"
+            name="startLocation"
             location={startLocation}
             setLocation={setStartLocation}
           />
@@ -152,7 +153,7 @@ export default function MainMenu({onSubmit, submit, setSubmit, itinerary, setIti
         <section>
           <h2>End Location:</h2>
           <PlacesAutoComplete
-            name="input1"
+            name="endLocation"
             location={endLocation}
             setLocation={setEndLocation}
           />
@@ -176,11 +177,8 @@ export default function MainMenu({onSubmit, submit, setSubmit, itinerary, setIti
             value={endDate}/>
           </section>
         </div>
-        
-          <button className="submitButton" onClick={handleSubmit}>Submit</button>        
-
-
-        <button className="mainMenuSubmitButton" onClick={handleSubmit} disabled={submit}>Submit</button>
+      
+      <button className="submitButton" onClick={handleSubmit} disabled={submit}>Submit</button>
 
       <Itinerary />
   </div>

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import itineraryDummyData from '../assets/sampleItineraryData';
 
-const Itinerary = () => {
+const Itinerary = (itinerary) => {
     const [newItinerary, setNewItinerary] = useState([]);
 
     useEffect(() => {
@@ -18,10 +18,7 @@ const Itinerary = () => {
                 {newItinerary.map((item, index) => (
                     <ul key={index}>
                         <ul>
-                            Head towards the city of 
-                                <li>{item.name}</li> on 
-                                <li>{item.date}</li> and
-                                <li>{item.desc}</li>
+                            
                         </ul>
                     </ul>
                 ))}
