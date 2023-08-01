@@ -141,7 +141,7 @@ export default function MainMenu({ submit, setSubmit, setItinerary, setError}) {
   return (
     <div className="mainMenu">        
         <div className="locationContainer">
-        <section onSubmit={onSubmit}>
+        <section onSubmit={handleSubmit}>
           <h2>Start Location:</h2>
           <PlacesAutoComplete
             name="startLocation"
@@ -180,7 +180,8 @@ export default function MainMenu({ submit, setSubmit, setItinerary, setError}) {
       
       <button className="submitButton" onClick={handleSubmit} disabled={submit}>Submit</button>
 
-      <Itinerary />
+      <Itinerary 
+      itinerary={Itinerary}/>
   </div>
   );
 }
