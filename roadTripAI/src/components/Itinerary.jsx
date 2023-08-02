@@ -28,8 +28,11 @@ const settings = {
     slidesToShow: 1,
     slidesToScroll: 1,
   };
+
+
+
     return (
-        <div className="itinerarySlider">
+        <div style={{width:"80%", marginLeft:"100px"}} className="itinerarySlider">
       <Slider {...settings}>{carouselItems}</Slider>
     </div>
   );
